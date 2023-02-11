@@ -1,0 +1,12 @@
+
+1. Built images
+    docker build -t getting-started .
+
+    + -t: tag
+    +  getting-started : name images
+    + .: file Dockerfile ở path hiện tại
+
+2. Built container
+   docker run -dp 3000:3000 getting-started
+
+   + -dp : detacted, port
