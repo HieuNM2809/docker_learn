@@ -1,1 +1,16 @@
 https://docs.docker.com/get-started/03_updating_app/
+
+1. Thay đổi content
+
+2. Built images
+    docker build -t getting-started .
+
+    + -t: tag
+    +  getting-started : name images
+    + .: file Dockerfile ở path hiện tại
+
+3. Built container
+   docker run -dp 3000:3000 getting-started
+
+   + -dp : detacted, port
+   => Lưu ý: Thay đổi port khi chạy ( tránh trùng )
