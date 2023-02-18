@@ -1,0 +1,9 @@
+https://docs.docker.com/get-started/04_sharing_app/
+
+==> server docker : https://labs.play-with-docker.com/
+
+1. Tạo 1 tag mới từ tag cũ ms tên cùng project trên docker hub 
+  =>  docker tag getting-started YOUR-USER-NAME/getting-started
+
+2. Đẩy lên docker hub 
+  => docker push YOUR-USER-NAME/getting-started
