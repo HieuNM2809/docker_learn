@@ -1,0 +1,12 @@
+https://docs.docker.com/get-started/05_persisting_data/
+ 
+
+1. Tạo volume
+  docker volume create todo-db
+
+2. Chạy 
+  docker run -dp 3000:3000 --mount type=volume,src=todo-db,target=/etc/todos getting-started 
+
+  --mount :  chọn chỉ định ổ đĩa
+  src     :  tên volume
+  target  :  chỗ lưu

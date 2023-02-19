@@ -6,4 +6,4 @@ https://docs.docker.com/get-started/04_sharing_app/
   =>  docker tag getting-started YOUR-USER-NAME/getting-started
 
 2. Đẩy lên docker hub 
-  => docker push YOUR-USER-NAME/getting-started
+  => docker push YOUR-USER-NAME/getting-started 
