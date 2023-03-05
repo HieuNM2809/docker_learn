@@ -9,4 +9,4 @@
 2. Built container
    docker run -dp 3000:3000 getting-started
 
-   + -dp :  , port
+   + -dp : detacted, port

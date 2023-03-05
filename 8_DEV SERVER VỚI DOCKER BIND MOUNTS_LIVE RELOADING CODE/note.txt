@@ -1,0 +1,15 @@
+docker run -dp 3000:3000 `
+    -w /app --mount type=bind,src="$(pwd)",target=/app `
+    getting-started `
+    sh -c "yarn install && yarn run dev"
+
+
+Lưu ý: pwd - print working directory
+
+1. -dp 3000:3000- giống như trước. Chạy ở chế độ tách rời (nền) và tạo ánh xạ cổng
+2. -w /app- đặt "thư mục làm việc" hoặc thư mục hiện tại mà lệnh sẽ chạy từ đó
+3. --mount type=bind,src="$(pwd)",target=/app- liên kết gắn thư mục hiện tại từ Máy chủ vào /appthư mục trong vùng chứa
+4. getting-started - hình ảnh để sử dụng. Lưu ý rằng đây là hình ảnh cơ sở cho ứng dụng của chúng tôi từ Dockerfile
+5. sh -c "yarn install && yarn run dev"- lệnh. Chúng tôi đang khởi động trình bao bằng cách sử dụng sh(alpine không có bash) 
+    và chạy yarn install để cài đặt các gói, sau đó chạy yarn run dev để khởi động máy chủ phát triển. Nếu chúng ta nhìn vào package.json,
+    chúng ta sẽ thấy rằng dev kịch bản bắt đầu nodemon.
