@@ -7,7 +7,6 @@ FROM node:18-alpine
 WORKDIR /app
 
 ## copy code vào thư mục app
-# Copy tất cả các file cùng cấp vào thư mục root docker
 COPY . .
 
 # Chạy cài mode_module
