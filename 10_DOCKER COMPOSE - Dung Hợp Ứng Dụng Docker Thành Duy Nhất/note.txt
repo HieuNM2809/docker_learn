@@ -1,0 +1,8 @@
+https://docs.docker.com/get-started/08_using_compose/
+
+    docker compose up -d
+        + -d : chạy nền
+    docker compose logs -f
+        + -f : follows
+
+Lưu ý: khi build thì reload lại con web

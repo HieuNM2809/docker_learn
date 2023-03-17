@@ -1,0 +1,42 @@
+services:
+  #Tên controllers
+  app_ten:
+    # Tên image
+    image: node:18-alpine
+    command: sh -c "yarn install && yarn run dev"
+    ports:
+      - 3000:3000
+    
+    # Xét thư mục app làm root
+    working_dir: /app
+    # Ánh xạ ổ đĩa app
+    volumes:
+      - ./:/app
+    
+    # Biến môi trường
+    environment:
+      MYSQL_HOST: mysql_ten
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
+  
+  #Tên controllers
+  mysql_ten:
+    # Thêm mysql
+    image: mysql:8.0
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    # Biến môi trường
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: todos
+      
+  #Thêm service xem database
+  db_viewer:
+    image: adminer
+    ports:
+      - 8080:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql_ten
+volumes:
+  todo-mysql-data:
