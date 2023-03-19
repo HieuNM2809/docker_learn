@@ -19,6 +19,10 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: secret
       MYSQL_DB: todos
+    # Đợi các service khác chạy
+    depends_on:
+      - mysql_ten
+      - db_viewer
   
   #Tên controllers
   mysql_ten:
