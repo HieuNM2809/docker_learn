@@ -1,5 +1,5 @@
 # sử dụng một image đã có PHP và Apache trên nền tảng Linux
-FROM php:8.0.24-fpm-alpine3.16
+FROM php:8.0-apache
 
 RUN apk update && apk add oniguruma-dev
 RUN docker-php-ext-install -j$(nproc) mbstring

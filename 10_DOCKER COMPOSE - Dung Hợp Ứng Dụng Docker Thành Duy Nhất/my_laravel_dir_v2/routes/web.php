@@ -15,15 +15,17 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return DB::table('test')->insert([
-        'id'=>2,
-        'name' =>4
-    ]);
-    return DB::table('test')->get();
     return view('welcome');
 });
+Route::get('/insert', function () {
+    return DB::table('users')->insert([
+        'name' =>"hieu",
+        'email' =>"hieu". rand()."@gmail.com",
+        'password' =>"hieu@gmail.com",
+    ]);
+});
 Route::get('/get', function () {
-    return DB::table('test')->get();
+    return DB::table('users')->get();
     return view('welcome');
 });
 
