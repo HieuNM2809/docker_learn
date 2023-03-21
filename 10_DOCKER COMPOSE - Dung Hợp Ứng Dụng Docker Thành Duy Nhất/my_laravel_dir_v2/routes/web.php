@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 1;
+    return DB::table('test')->insert([
+        'id'=>2,
+        'name' =>4
+    ]);
+    return DB::table('test')->get();
+    return view('welcome');
+});
+Route::get('/get', function () {
+    return DB::table('test')->get();
     return view('welcome');
 });
 
+
+
+
+// Chạy http://localhost:8000/public/
