@@ -34,6 +34,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: todos
+    ports:
+      - 33063:3306
       
   #Thêm service xem database
   db_viewer:
@@ -44,3 +46,7 @@ services:
       ADMINER_DEFAULT_SERVER: mysql_ten
 volumes:
   todo-mysql-data:
+
+
+
+# LƯU Ý: connect db HeidiSQl, Navicat : localhost, 33063, root, secret

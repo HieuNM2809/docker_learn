@@ -26,6 +26,9 @@ services:
     image: mysql:8.0
     volumes:
       - todo-mysql-data:/var/lib/mysql
+    # Thêm port cho MySQL
+    ports:
+      - 33063:3306
     # Biến môi trường
     environment:
       MYSQL_ROOT_PASSWORD: secret
