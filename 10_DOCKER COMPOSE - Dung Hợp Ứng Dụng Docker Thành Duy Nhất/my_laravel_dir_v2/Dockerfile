@@ -1,6 +1,8 @@
 # Thêm thư viên
 FROM php:8.0-apache
 
+ENV http_proxy http://proxy.hcm.fpt.vn:80
+ENV https_proxy http://proxy.hcm.fpt.vn:80
 
 # Thêm các package
 RUN apt-get update && \
@@ -19,3 +21,10 @@ RUN chown -R www-data:www-data /var/www/html && \
     sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf && \
     sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/default-ssl.conf && \
     service apache2 restart
+
+
+ENV http_proxy ""
+ENV https_proxy ""
+
+
+#  Chú ý: nếu lỗi thì full từng image về 
