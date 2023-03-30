@@ -1,7 +1,9 @@
+
+FROM phpdockerio/php:8.0-fpm
+
 ENV http_proxy http://proxy.hcm.fpt.vn:80
 ENV https_proxy http://proxy.hcm.fpt.vn:80
 
-FROM phpdockerio/php:8.0-fpm
 WORKDIR "/application"
 
 RUN apt-get update; \
@@ -16,3 +18,6 @@ RUN apt-get update; \
         php8.0-ssh2; \
     apt-get clean; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
+ENV http_proxy ''
+ENV https_proxy ''
