@@ -1,0 +1,5 @@
+Cài riêng lẻ từng ứng dụng để sài dưới local thay vì download
+
++ VD: cài mysql và export ra local sài
+
+
