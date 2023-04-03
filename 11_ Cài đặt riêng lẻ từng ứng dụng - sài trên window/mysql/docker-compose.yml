@@ -16,3 +16,6 @@ services:
 volumes:
   db:
     driver: local
+
+
+# Kết nối với db : localhost:3307 - và username password
